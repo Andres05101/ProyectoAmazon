@@ -20,8 +20,8 @@
 ## 1. Clonar el repositorio
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
-cd <carpeta_del_proyecto>
+git clone (https://github.com/Andres05101/ProyectoAmazon.git)
+cd ProyectoAmazon
 ```
 
 ---
