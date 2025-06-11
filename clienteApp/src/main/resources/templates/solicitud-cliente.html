@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Devolución</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    input[type="text"]
+     {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .radio-group {
+      margin-bottom: 15px;
+    }
+
+    .radio-group label {
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .radio-group input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <form action="/start-process" method="post" role="form">
+    <input type="hidden" name="proceso" th:value="${proceso}" />
+    <h2>Formulario de Devolución</h2>
+
+    <label for="nombre">Nombre del comprador:</label>
+    <input type="text" id="nombre" name="nombre" required />
+
+    <label for="fechaCompra">Fecha de la compra:</label>
+    <input type="date" id="fechaCompra" name="fechaCompra" />
+
+    <div class="radio-group">
+      <label>Motivo de la devolución:</label>
+      <label><input type="radio" name="motivo" value="porDefecto" required /> Producto defectuoso</label>
+      <label><input type="radio" name="motivo" value="porProducto" /> Producto erróneo</label>
+      <label><input type="radio" name="motivo" value="porAccesorios" /> Producto incompleto</label>
+      <label><input type="radio" name="motivo" value="porTiempo" /> No satisfecho con el producto</label>
+    </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+</body>
+</html>

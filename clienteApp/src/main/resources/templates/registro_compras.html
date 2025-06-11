@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Registro de Compras</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 2rem 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 0.5rem;
+      margin-top: 0.6rem;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 480px) {
+      form {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <form action="/iniciar-compra" method="post">
+        <h1>Registro de Compras</h1>
+
+        <label for="nombre">Nombre del comprador:</label>
+        <input type="text" id="nombre" name="nombre" required>
+    
+        <label for="pais">País:</label>
+        <input type="text" id="pais" name="pais" required>
+    
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado" required>
+    
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad" required>
+    
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required>
+
+        <div class="form-group">
+            <label>Tipo de entrega:</label>
+            <input type="radio" name="tipoEntrega" value="nacional" required /> Nacional
+            <input type="radio" name="tipoEntrega" value="internacional" /> Internacional
+        </div>
+
+        <h3 style="margin-bottom: 0.5rem;">Productos a comprar</h3>
+
+        <fieldset style="border: 1px solid #ccc; border-radius: 6px; padding: 1rem;">
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <label><input type="checkbox" name="productos" value="ps5"> PlayStation 5 (500USD)</label>
+            <label><input type="checkbox" name="productos" value="batidora"> Batidora (30USD)</label>
+            <label><input type="checkbox" name="productos" value="mochila"> Mochila (80USD)</label>
+            <label><input type="checkbox" name="productos" value="tenis"> Tenis Adiclas (120USD)</label>
+            <label><input type="checkbox" name="productos" value="medias"> Par de Medias (2USD)</label>
+        </div>
+        </fieldset>
+    
+        <input type="submit" value="Enviar">
+      </form>
+    </body>
+    </html>

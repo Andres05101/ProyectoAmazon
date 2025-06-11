@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recibir Orden de Compra</title>
+  <style>
+    body {background-color: #f3f4f6;font-family: Arial, sans-serif;display: flex;justify-content: center;align-items: center;min-height: 100vh;margin: 0;}
+    form {background: #fff;padding: 30px;border-radius: 10px;box-shadow: 0 4px 10px rgba(0,0,0,0.1);max-width: 400px;width: 100%;}
+    h1, h2 {text-align: center;color: #333;}
+    label {font-weight: bold;color: #333;}
+    input[type="text"], input[type="number"], select, textarea {width: 100%;padding: 10px;margin-bottom: 15px;border: 1px solid #ccc;border-radius: 5px;background-color: #f8f8f8;}
+    button[type="submit"], input[type="submit"] {width: 100%;padding: 10px;background-color: #007bff;color: white;border: none;border-radius: 5px;font-weight: bold;cursor: pointer;}
+    button[type="submit"]:hover, input[type="submit"]:hover {background-color: #0056b3;}
+  </style>
+</head>
+<body>
+  <form role="form" name="form" th:action="@{/recibir-orden-compra}" method="post">
+    <h1>Recibir Orden de Compra</h1>
+
+    <input type="hidden" name="taskId" th:value="${taskId}" />
+    <input type="hidden" name="processInstanceId" th:value="${processInstanceId}" />
+
+    <div class="form-group">
+      <label for="producto">Producto</label>
+      <input type="text" id="producto" name="producto" class="form-control" th:value="${producto}" readonly/>
+    </div>
+
+    <div class="form-group">
+      <label for="cantidadAComprar">Cantidad del producto</label>
+      <input type="number" id="cantidadAComprar" name="cantidadAComprar" class="form-control" th:value="${cantidadAComprar}" readonly/>
+    </div>
+
+    <div class="form-group">
+      <label>¿Se puede realizar la entrega?</label>
+      <label><input type="radio" name="aceptada" value="true" required> Sí</label>
+      <label><input type="radio" name="aceptada" value="false"> No</label>
+    </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+</body>
+</html>

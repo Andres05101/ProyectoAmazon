@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Asignar Distribuidor Nacional</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {margin: 0; font-family: Arial, sans-serif;background-color: #f3f4f6;display: flex;justify-content: center;align-items: center;min-height: 100vh;}
+
+    .form-container {background-color: #fff;padding: 30px;border-radius: 10px;box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);width: 100%;max-width: 500px;}
+
+    h2 {text-align: center;margin-bottom: 20px;color: #333;}
+
+    .btn-primary {width: 100%;}
+  </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Asignar Distribuidor Nacional</h2>
+        <form th:action="@{/completar-tarea-distribuidor}" method="post">
+          <input type="hidden" name="taskId" th:value="${taskId}" />
+          <input type="hidden" name="processInstanceId" th:value="${processInstanceId}" />
+    
+          <div class="form-group">
+            <label>Seleccione el distribuidor nacional:</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="distriNacional" id="servientrega" value="Servientrega" required>
+              <label class="form-check-label" for="servientrega">Servientrega</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="distriNacional" id="interrapidisimo" value="Interrapidisimo">
+              <label class="form-check-label" for="interrapidisimo">Interrapidisimo</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="distriNacional" id="coordinadora" value="Coordinadora">
+              <label class="form-check-label" for="coordinadora">Coordinadora</label>
+            </div>
+          </div>
+    
+          <button type="submit" class="btn btn-primary">Asignar Distribuidor</button>
+        </form>
+      </div>
+    </body>
+    </html>

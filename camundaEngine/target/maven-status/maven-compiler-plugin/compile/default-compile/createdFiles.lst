@@ -1,0 +1,16 @@
+com\example\workflow\ImprimirEtiqueta.class
+com\example\workflow\repositorio\RepositorioLogistico.class
+com\example\workflow\model\SedeEnvio.class
+com\example\workflow\ImprimirGuiaRetorno.class
+com\example\workflow\CrearOrdenCompra.class
+com\example\workflow\dto\RegistroComprasForm.class
+com\example\workflow\model\Bodega.class
+com\example\workflow\SimuladorController.class
+com\example\workflow\NotificarPagoRechazadoDelegate.class
+com\example\workflow\ActualizarInventario.class
+com\example\workflow\GenerarSolicitud.class
+com\example\workflow\Application.class
+com\example\workflow\ProcesoController.class
+com\example\workflow\CalculoEnvio.class
+com\example\workflow\GenerarFactura.class
+com\example\workflow\NotificarCondicion.class
